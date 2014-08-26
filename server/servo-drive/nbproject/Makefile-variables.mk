@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU_ARMv6_HF-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU_ARMv6_HF-Linux-x86
-CND_ARTIFACT_NAME_Debug=librpi-servo-drive.a
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU_ARMv6_HF-Linux-x86/librpi-servo-drive.a
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU_ARMv6_HF-Linux-x86/package
-CND_PACKAGE_NAME_Debug=rpi-servo-drive.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU_ARMv6_HF-Linux-x86/package/rpi-servo-drive.tar
+CND_PLATFORM_Debug=GNU_armv6-Linux-x86
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU_armv6-Linux-x86
+CND_ARTIFACT_NAME_Debug=libservo-drive.a
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU_armv6-Linux-x86/libservo-drive.a
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU_armv6-Linux-x86/package
+CND_PACKAGE_NAME_Debug=servo-drive.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU_armv6-Linux-x86/package/servo-drive.tar
 # Release configuration
 CND_PLATFORM_Release=GNU_ARMv6_HF_-Linux-x86
 CND_ARTIFACT_DIR_Release=dist/Release/GNU_ARMv6_HF_-Linux-x86

@@ -21,7 +21,7 @@ FC=gfortran
 AS=arm-linux-gnueabihf-as
 
 # Macros
-CND_PLATFORM=GNU_ARMv6_HF-Linux-x86
+CND_PLATFORM=GNU_armv6-Linux-x86
 CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
@@ -61,43 +61,43 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librpi-servo-drive.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libservo-drive.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librpi-servo-drive.a: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libservo-drive.a: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librpi-servo-drive.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librpi-servo-drive.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librpi-servo-drive.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libservo-drive.a
+	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libservo-drive.a ${OBJECTFILES} 
+	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libservo-drive.a
 
 ${OBJECTDIR}/src/driver.o: src/driver.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/driver.o src/driver.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/xenomai/include -I../gpio-lib/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/driver.o src/driver.cpp
 
 ${OBJECTDIR}/src/gpio.o: src/gpio.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/gpio.o src/gpio.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/xenomai/include -I../gpio-lib/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/gpio.o src/gpio.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/xenomai/include -I../gpio-lib/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 ${OBJECTDIR}/src/servo.o: src/servo.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/servo.o src/servo.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/xenomai/include -I../gpio-lib/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/servo.o src/servo.cpp
 
 ${OBJECTDIR}/src/spinlock.o: src/spinlock.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/spinlock.o src/spinlock.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/xenomai/include -I../gpio-lib/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/spinlock.o src/spinlock.cpp
 
 ${OBJECTDIR}/src/time.o: src/time.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/time.o src/time.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/xenomai/include -I../gpio-lib/src -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/time.o src/time.cpp
 
 # Subprojects
 .build-subprojects:
@@ -105,7 +105,7 @@ ${OBJECTDIR}/src/time.o: src/time.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/librpi-servo-drive.a
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libservo-drive.a
 
 # Subprojects
 .clean-subprojects:

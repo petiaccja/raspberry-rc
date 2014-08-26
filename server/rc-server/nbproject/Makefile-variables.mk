@@ -7,13 +7,13 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU_ARMv6_HF_-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU_ARMv6_HF_-Linux-x86
+CND_PLATFORM_Debug=GNU_armv6-Linux-x86
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU_armv6-Linux-x86
 CND_ARTIFACT_NAME_Debug=rc-server
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU_ARMv6_HF_-Linux-x86/rc-server
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU_ARMv6_HF_-Linux-x86/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU_armv6-Linux-x86/rc-server
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU_armv6-Linux-x86/package
 CND_PACKAGE_NAME_Debug=rc-server.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU_ARMv6_HF_-Linux-x86/package/rc-server.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU_armv6-Linux-x86/package/rc-server.tar
 # Release configuration
 CND_PLATFORM_Release=GNU_ARMv6_HF-Linux-x86
 CND_ARTIFACT_DIR_Release=dist/Release/GNU_ARMv6_HF-Linux-x86

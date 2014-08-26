@@ -21,7 +21,7 @@ FC=gfortran
 AS=arm-linux-gnueabihf-as
 
 # Macros
-CND_PLATFORM=GNU_ARMv6_HF_-Linux-x86
+CND_PLATFORM=GNU_armv6-Linux-x86
 CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
@@ -55,7 +55,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L../../Library/boost_1_54_0_arm/stage/arm/lib -L/usr/xenomai/lib -lboost_system -lrt ../rpi-servo-drive/dist/Debug/GNU_ARMv6_HF-Linux-x86/librpi-servo-drive.a -lnative -lxenomai
+LDLIBSOPTIONS=-L../../external/boost_1_54_0_arm/stage/arm/lib -L../../external/xenomai/lib -lboost_system -lrt ../rpi-servo-drive/dist/Debug/GNU_ARMv6_HF-Linux-x86/librpi-servo-drive.a -lnative -lxenomai
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -70,22 +70,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rc-server: ${OBJECTFILES}
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../Library/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 ${OBJECTDIR}/src/net_server.o: src/net_server.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../Library/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/net_server.o src/net_server.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/net_server.o src/net_server.cpp
 
 ${OBJECTDIR}/src/servo_state.o: src/servo_state.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../Library/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/servo_state.o src/servo_state.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/servo_state.o src/servo_state.cpp
 
 ${OBJECTDIR}/src/spinlock.o: src/spinlock.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../Library/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/spinlock.o src/spinlock.cpp
+	$(COMPILE.cc) -g -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I../../external/boost_1_54_0_arm -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/spinlock.o src/spinlock.cpp
 
 # Subprojects
 .build-subprojects:

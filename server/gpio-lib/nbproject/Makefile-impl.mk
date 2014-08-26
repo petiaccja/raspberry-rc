@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=rpi-gpio-lib
+PROJECTNAME=gpio-lib
 
 # Active Configuration
 DEFAULTCONF=Debug

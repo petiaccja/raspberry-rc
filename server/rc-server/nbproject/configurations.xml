@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="SourceFiles" displayName="Source" projectFiles="true">
       <itemPath>src/main.cpp</itemPath>
@@ -28,7 +28,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>GNU_ARMv6_HF_|GNU</compilerSet>
+        <compilerSet>GNU_armv6|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -36,7 +36,7 @@
         <ccTool>
           <standard>8</standard>
           <incDir>
-            <pElem>../../Library/boost_1_54_0_arm</pElem>
+            <pElem>../../external/boost_1_54_0_arm</pElem>
           </incDir>
           <commandLine>-pthread</commandLine>
           <preprocessorList>
@@ -46,8 +46,8 @@
         </ccTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>../../Library/boost_1_54_0_arm/stage/arm/lib</pElem>
-            <pElem>/usr/xenomai/lib</pElem>
+            <pElem>../../external/boost_1_54_0_arm/stage/arm/lib</pElem>
+            <pElem>../../external/xenomai/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>boost_system</linkerLibLibItem>

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=rpi-servo-drive
+PROJECTNAME=servo-drive
 
 # Active Configuration
 DEFAULTCONF=Debug

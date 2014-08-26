@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="90">
+<configurationDescriptor version="94">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="f1" displayName="Driver" projectFiles="true">
       <itemPath>src/driver.cpp</itemPath>
@@ -37,7 +37,7 @@
   <confs>
     <conf name="Debug" type="3">
       <toolsSet>
-        <compilerSet>GNU_ARMv6_HF|GNU</compilerSet>
+        <compilerSet>GNU_armv6|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -45,7 +45,8 @@
         <ccTool>
           <standard>8</standard>
           <incDir>
-            <pElem>/usr/xenomai/include</pElem>
+            <pElem>../../external/xenomai/include</pElem>
+            <pElem>../gpio-lib/src</pElem>
           </incDir>
           <commandLine>-pthread</commandLine>
           <preprocessorList>
