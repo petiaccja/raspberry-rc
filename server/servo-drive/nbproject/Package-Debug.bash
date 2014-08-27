@@ -13,8 +13,8 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=so
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libservo-drive.a
-OUTPUT_BASENAME=libservo-drive.a
+OUTPUT_PATH=./libservo-drived.a
+OUTPUT_BASENAME=libservo-drived.a
 PACKAGE_TOP_DIR=servo-drive/
 
 # Functions

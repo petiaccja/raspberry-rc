@@ -1,1 +1,8 @@
+/server/gpio-lib/build/
 /server/gpio-lib/dist/
+/server/servo-drive/build/
+/server/servo-drive/dist/
+/server/rc-server/build/
+/server/rc-server/dist/
+/server/gpio-lib/*.a
+/server/servo-drive/*.a

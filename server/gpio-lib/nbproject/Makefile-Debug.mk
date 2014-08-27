@@ -57,13 +57,13 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libgpio-lib.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ./libgpio-libd.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libgpio-lib.a: ${OBJECTFILES}
-	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libgpio-lib.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libgpio-lib.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libgpio-lib.a
+./libgpio-libd.a: ${OBJECTFILES}
+	${MKDIR} -p .
+	${RM} ./libgpio-libd.a
+	${AR} -rv ./libgpio-libd.a ${OBJECTFILES} 
+	$(RANLIB) ./libgpio-libd.a
 
 ${OBJECTDIR}/src/gpio.o: src/gpio.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -81,7 +81,7 @@ ${OBJECTDIR}/src/main.o: src/main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libgpio-lib.a
+	${RM} ./libgpio-libd.a
 
 # Subprojects
 .clean-subprojects:

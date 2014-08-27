@@ -21,7 +21,7 @@ FC=gfortran
 AS=arm-linux-gnueabihf-as
 
 # Macros
-CND_PLATFORM=GNU_ARMv6_HF_-Linux-x86
+CND_PLATFORM=GNU_armv6-Linux-x86
 CND_DLIB_EXT=so
 CND_CONF=Release
 CND_DISTDIR=dist
@@ -36,11 +36,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/driver.o \
-	${OBJECTDIR}/src/gpio.o \
 	${OBJECTDIR}/src/main.o \
 	${OBJECTDIR}/src/servo.o \
 	${OBJECTDIR}/src/spinlock.o \
-	${OBJECTDIR}/src/time.o
+	${OBJECTDIR}/src/timer.o
 
 
 # C Compiler Flags
@@ -61,21 +60,18 @@ LDLIBSOPTIONS=-L/usr/xenomai/lib -lnative -lxenomai
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rpi-servo-drive
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ./libservo-drive.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rpi-servo-drive: ${OBJECTFILES}
-	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rpi-servo-drive ${OBJECTFILES} ${LDLIBSOPTIONS}
+./libservo-drive.a: ${OBJECTFILES}
+	${MKDIR} -p .
+	${RM} ./libservo-drive.a
+	${AR} -rv ./libservo-drive.a ${OBJECTFILES} 
+	$(RANLIB) ./libservo-drive.a
 
 ${OBJECTDIR}/src/driver.o: src/driver.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -DNDEBUG -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/driver.o src/driver.cpp
-
-${OBJECTDIR}/src/gpio.o: src/gpio.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -DNDEBUG -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/gpio.o src/gpio.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -92,10 +88,10 @@ ${OBJECTDIR}/src/spinlock.o: src/spinlock.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -DNDEBUG -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/spinlock.o src/spinlock.cpp
 
-${OBJECTDIR}/src/time.o: src/time.cpp 
+${OBJECTDIR}/src/timer.o: src/timer.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O3 -DNDEBUG -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/time.o src/time.cpp
+	$(COMPILE.cc) -O3 -DNDEBUG -D_GLIBCXX_USE_NANOSLEEP -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/xenomai/include -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/timer.o src/timer.cpp
 
 # Subprojects
 .build-subprojects:
@@ -103,7 +99,7 @@ ${OBJECTDIR}/src/time.o: src/time.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rpi-servo-drive
+	${RM} ./libservo-drive.a
 
 # Subprojects
 .clean-subprojects:

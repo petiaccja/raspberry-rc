@@ -6,7 +6,6 @@
       <itemPath>src/message.h</itemPath>
       <itemPath>src/net_server.cpp</itemPath>
       <itemPath>src/net_server.h</itemPath>
-      <itemPath>src/servo_drive.h</itemPath>
       <itemPath>src/servo_state.cpp</itemPath>
       <itemPath>src/servo_state.h</itemPath>
       <itemPath>src/spinlock.cpp</itemPath>
@@ -33,28 +32,34 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <commandLine>-std=gnu99</commandLine>
+        </cTool>
         <ccTool>
           <standard>8</standard>
           <incDir>
             <pElem>../../external/boost_1_54_0_arm</pElem>
+            <pElem>../servo-drive/src</pElem>
+            <pElem>../gpio-lib/src</pElem>
           </incDir>
           <commandLine>-pthread</commandLine>
           <preprocessorList>
-            <Elem>_GLIBCXX_USE_NANOSLEEP</Elem>
             <Elem>__GXX_EXPERIMENTAL_CXX0X__</Elem>
           </preprocessorList>
         </ccTool>
         <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/rc-server</output>
           <linkerAddLib>
             <pElem>../../external/boost_1_54_0_arm/stage/arm/lib</pElem>
-            <pElem>../../external/xenomai/lib</pElem>
+            <pElem>../../external/xenomai/INSTALL/usr/xenomai/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>boost_system</linkerLibLibItem>
             <linkerLibLibItem>rt</linkerLibLibItem>
-            <linkerLibFileItem>../rpi-servo-drive/dist/Debug/GNU_ARMv6_HF-Linux-x86/librpi-servo-drive.a</linkerLibFileItem>
             <linkerLibLibItem>native</linkerLibLibItem>
             <linkerLibLibItem>xenomai</linkerLibLibItem>
+            <linkerLibFileItem>../servo-drive/libservo-drived.a</linkerLibFileItem>
+            <linkerLibFileItem>../gpio-lib/libgpio-libd.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -65,8 +70,6 @@
       <item path="src/net_server.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/net_server.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/servo_drive.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/servo_state.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -104,8 +107,6 @@
       <item path="src/net_server.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/net_server.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="src/servo_drive.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/servo_state.cpp" ex="false" tool="1" flavor2="0">
       </item>
