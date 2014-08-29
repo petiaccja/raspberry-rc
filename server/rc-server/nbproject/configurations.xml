@@ -42,7 +42,7 @@
             <pElem>../servo-drive/src</pElem>
             <pElem>../gpio-lib/src</pElem>
           </incDir>
-          <commandLine>-pthread</commandLine>
+          <commandLine>-pthread -static-libstdc++</commandLine>
           <preprocessorList>
             <Elem>__GXX_EXPERIMENTAL_CXX0X__</Elem>
           </preprocessorList>

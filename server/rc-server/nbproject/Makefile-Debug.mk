@@ -45,8 +45,8 @@ OBJECTFILES= \
 CFLAGS=-std=gnu99
 
 # CC Compiler Flags
-CCFLAGS=-pthread
-CXXFLAGS=-pthread
+CCFLAGS=-pthread -static-libstdc++
+CXXFLAGS=-pthread -static-libstdc++
 
 # Fortran Compiler Flags
 FFLAGS=
