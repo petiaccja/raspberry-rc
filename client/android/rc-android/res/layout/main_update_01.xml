@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+	android:id="@+id/widget39"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+	android:id="@+id/widget46"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:padding="8dp">
+<Button
+	android:id="@+id/connectButton"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="Connect" />
+<EditText
+	android:id="@+id/addressEdit"
+	android:layout_width="0dp"
+	android:layout_height="wrap_content"
+	android:hint="example.address.com:1500"
+	android:textSize="18sp"
+	android:layout_weight="1" />
+</LinearLayout>
+<TextView
+	android:id="@+id/connectMessage"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="TextView" />
+<RelativeLayout
+	android:id="@+id/widget36"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+<ProgressBar
+	android:id="@+id/connectProgress"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_alignParentTop="true"
+	android:layout_centerHorizontal="true" />
+</RelativeLayout>
+</TableLayout>

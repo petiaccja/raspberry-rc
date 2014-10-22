@@ -6,3 +6,6 @@
 /server/rc-server/dist/
 /server/gpio-lib/*.a
 /server/servo-drive/*.a
+/client/android/rc-android/bin
+/client/android/rc-android/gen
+/client/android/rc-android/private

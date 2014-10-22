@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  xmlns:tools="http://schemas.android.com/tools"
+			  android:id="@+id/container"
+			  tools:context="android.test02.MainActivity"
+			  tools:ignore="MergeRootFrame"
+			  android:orientation="vertical"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:layout_gravity="center_horizontal|top">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Server login:"
+		android:id="@+id/labelLogin"
+		android:layout_weight="2" />
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal|top">
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+
+			<EditText
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/addressEdit"
+				android:layout_gravity="right|top"
+				android:hint="address" />
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/passwordEdit"
+				android:layout_gravity="center_horizontal"
+				android:hint="password"
+				android:inputType="textPassword" />
+
+		</LinearLayout>
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:text="Connect"
+			android:id="@+id/connectButton"
+			android:onClick="onConnect" />
+			android:layout_gravity="center_vertical" />
+	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="2">
+
+		<!--Space
+			android:layout_width="10dp"
+			android:layout_height="match_parent" /-->
+
+		<ProgressBar
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/connectProgress"
+			android:indeterminate="false" />
+
+		<!--Space
+			android:layout_width="10dp"
+			android:layout_height="match_parent" /-->
+
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="Connection status"
+			android:id="@+id/connectMessage"
+			android:layout_gravity="center_vertical|right" />
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="Options:"
+		android:id="@+id/labelOptions" />
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="GUI Settings..."
+			android:id="@+id/guiSettingsBtn"
+			android:layout_column="0"
+			android:layout_row="0" />
+
+		<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Vehicle settings..."
+			android:id="@+id/vehicleSettingsBtn"
+			android:layout_row="1"
+			android:layout_column="0"
+			android:layout_weight="2" />
+
+	</LinearLayout>
+
+</LinearLayout>
