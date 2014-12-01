@@ -1,0 +1,23 @@
+////////////////////////////////////////////////////////////////////////////////
+//	File: RCClientException.java
+//	Author: Péter Kardos
+////////////////////////////////////////////////////////////////////////////////
+//	Exception class used by the RCClient.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+package rc.client;
+
+/**
+ * Server didn't accept the password sent.
+ */
+public class InvalidPasswordException extends Exception {
+	public InvalidPasswordException() {
+		super();
+	}
+	public InvalidPasswordException(String message) {
+		super(message);
+	}	
+}
+
+

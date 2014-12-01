@@ -8,4 +8,7 @@
 /server/servo-drive/*.a
 /client/android/rc-android/bin
 /client/android/rc-android/gen
-/client/android/rc-android/private
+#/client/android/rc-android/private
+#/client/desktop/rc-controller/nbproject/private/
+/client/desktop/rc-controller/build/
+/client/desktop/rc-controller/dist/

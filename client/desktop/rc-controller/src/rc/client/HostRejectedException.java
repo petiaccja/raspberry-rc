@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////////////
+//	File: RCClientException.java
+//	Author: Péter Kardos
+////////////////////////////////////////////////////////////////////////////////
+//	Exception class used by the RCClient.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+package rc.client;
+
+/**
+ * Server simply doesn't want to connect.
+ */
+public class HostRejectedException extends Exception {
+	public HostRejectedException() {
+		super();
+	}
+	public HostRejectedException(String message) {
+		super(message);
+	}	
+}
