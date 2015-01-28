@@ -16,7 +16,7 @@ package rc.client;
 
 ////////////////////////////////////////
 /**
- * Helper class for seinding instructions to server.
+ * Helper class for sending instructions to server.
  * This class stores, creates, and adds the ability to easily modify
  * a single message that is sent over network.
  */

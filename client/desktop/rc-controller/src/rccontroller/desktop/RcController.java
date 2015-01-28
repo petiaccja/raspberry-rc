@@ -69,7 +69,7 @@ public class RcController extends javax.swing.JFrame {
 	}
 	
 	/**
-	 * Set thottle.
+	 * Set throttle.
 	 */
 	void setThrottle(float value) {
 		if (!client.isConnected()) {
@@ -173,16 +173,16 @@ public class RcController extends javax.swing.JFrame {
 	
 	/**
 	 * Connect to a server.
-	 * @param address
-	 * @param port
-	 * @param password
-	 * @param pinThrottle
-	 * @param pinSteering
-	 * @throws InvalidPasswordException
-	 * @throws HostRejectedException
-	 * @throws IllegalStateException
-	 * @throws IOException
-	 * @throws Exception
+	 * @param address Address of server.
+	 * @param port Remote port on the server.
+	 * @param password Authentication password.
+	 * @param pinThrottle Which physical GPIO pin of the Raspy to drive for throttle.
+	 * @param pinSteering Which physical GPIO pin of the Raspy to drive for steering.
+	 * @throws InvalidPasswordException Password is invalid.
+	 * @throws HostRejectedException Server refused to connect for some reason.
+	 * @throws IllegalStateException You can't call that since you are already connceted.
+	 * @throws IOException Network error occured.
+	 * @throws Exception Could not add servos. Check message.
 	 */
 	public void connect(String address, int port, byte[] password, int pinThrottle, int pinSteering) 
 			throws InvalidPasswordException, HostRejectedException, IllegalStateException, IOException, Exception
@@ -211,6 +211,7 @@ public class RcController extends javax.swing.JFrame {
 	
 	/**
 	 * Disconnect form server.
+	 * Closes network connection, server is reseted automatically.
 	 */
 	public void disconnect() {
 		if (client.isConnected()) {
@@ -391,20 +392,39 @@ public class RcController extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+	/**
+	 * Handler when clicked menu>file>exit.
+	 * Closes the form.
+	 * @param evt unused
+	 */
     private void miExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miExitActionPerformed
 		dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
     }//GEN-LAST:event_miExitActionPerformed
 
+	/**
+	 * Handler when clicked menu>connection>connect.
+	 * Brings up connection menu.
+	 * @param evt unused
+	 */
     private void miConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miConnectActionPerformed
         // bring up connection menu
 		connectFrame.setVisible(true);
     }//GEN-LAST:event_miConnectActionPerformed
 
+	/**
+	 * Handler when clicked menu>connection>disconnect.
+	 * Disconnects from server.
+	 * @param evt unused
+	 */
     private void miDisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miDisconnectActionPerformed
         // close connection
 		disconnect();
     }//GEN-LAST:event_miDisconnectActionPerformed
 
+	/**
+	 * Called when frame is closing.
+	 * Disconnects, frees resources, saves settings.
+	 */
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
 		// kill connection when windows is closed
 		disconnect();
@@ -426,6 +446,10 @@ public class RcController extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_formWindowClosing
 
+	/**
+	 * Reads steering state from the text field.
+	 * @param evt 
+	 */
     private void tfSteeringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSteeringActionPerformed
         // parse steering from text edit and set values
 		String text = tfSteering.getText();
@@ -445,6 +469,10 @@ public class RcController extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_tfSteeringActionPerformed
 
+	/**
+	 * Reads throttle state from the text field.
+	 * @param evt 
+	 */
     private void tfThrottleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfThrottleActionPerformed
 		// parse throttle from text edit and set values
 		String text = tfThrottle.getText();
@@ -464,6 +492,10 @@ public class RcController extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_tfThrottleActionPerformed
 
+	/**
+	 * Reads throttle state from the slider.
+	 * @param evt 
+	 */
     private void sliderThrottleStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderThrottleStateChanged
 		int value = sliderThrottle.getValue();
 		
@@ -484,6 +516,10 @@ public class RcController extends javax.swing.JFrame {
 		setThrottle(value / 100.0f);
     }//GEN-LAST:event_sliderThrottleStateChanged
 
+	/**
+	 * Reads steering state from the slider.
+	 * @param evt 
+	 */
     private void sliderSteeringStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderSteeringStateChanged
 		int value = sliderSteering.getValue();
 		
@@ -504,6 +540,11 @@ public class RcController extends javax.swing.JFrame {
 		setSteering(value / 100.0f);
     }//GEN-LAST:event_sliderSteeringStateChanged
 
+	/**
+	 * Called when clicking menu>tools>settings.
+	 * Brings up settings menu.
+	 * @param evt 
+	 */
     private void miSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSettingsActionPerformed
         // show settings dialogue
 		settingsFrame.setVisible(true);

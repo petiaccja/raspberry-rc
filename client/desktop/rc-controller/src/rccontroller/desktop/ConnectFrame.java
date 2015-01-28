@@ -160,6 +160,11 @@ public class ConnectFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+	/**
+	 * Handler for connect button.
+	 * Performs connection to the server.
+	 * @param evt
+	 */
     private void btnConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConnectActionPerformed
 
 		// connect / disconnect
@@ -254,6 +259,10 @@ public class ConnectFrame extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_btnConnectActionPerformed
 
+	/**
+	 * Updates controls according to current connection state.
+	 * @param evt 
+	 */
     private void formWindowGainedFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowGainedFocus
         // update state on focus gained
 		state = client.isConnected() ? CONNECTED : DISCONNECTED;

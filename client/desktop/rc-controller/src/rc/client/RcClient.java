@@ -91,6 +91,10 @@ public class RcClient {
 			connection.send(new Message(RCInstruction.SET_DEFAULT_STEERING, pin, servo.getPaused()));
 		}
 	}
+	
+	/**
+	 * Currently does not work.
+	 */
 	public void setSmoothing(int pin, float smoothing) throws IOException, IllegalStateException {
 		ServoOut servo = outputs.get(new Integer(pin));
 		if (servo!=null) {

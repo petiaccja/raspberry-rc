@@ -84,6 +84,10 @@ public class ServoOut {
 		}
 		maxPulseWidth = maxWidthMicros;
 	}
+	
+	/**
+	 * Currently does not work.
+	 */
 	public final void setSmoothing(float smoothing) {
 		this.smoothing = smoothing;
 	}
